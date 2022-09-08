@@ -81,11 +81,13 @@ function authToken(req, res, next) {
 const io = require("socket.io")(server, {
     // path: '/socket.io',
     cors: {
-        origin: "http://localhost:8080",
+        origin: ["https://skript-proj-be.herokuapp.com", 
+        "https://skript-proj-auth.herokuapp.com/"],
         credentials: true
     },
 
-    origins: ["http://localhost:8080"],
+    origin: ["https://skript-proj-be.herokuapp.com", 
+        "https://skript-proj-auth.herokuapp.com/"],
     methods: ['GET', 'POST'],
             credentials: true,        
             allowEIO3: true
