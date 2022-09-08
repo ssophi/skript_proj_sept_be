@@ -99,6 +99,7 @@ io.on('connection', socket => {
     socket.on('error', err => socket.emit('error', err.message) );
 });
 
+//proba
 const staticMdl = express.static(path.join(__dirname, 'dist'));
 
 app.use(staticMdl);
