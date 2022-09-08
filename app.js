@@ -97,4 +97,11 @@ io.on('connection', socket => {
     socket.on('error', err => socket.emit('error', err.message) );
 });
 
-server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+app.use(staticMdl);
+
+app.use(history({ index: '/index.html' }));
+
+app.use(staticMdl);
+
+server.listen(process.env.PORT || PORT, () => console.log(`Server running on port ${PORT}`));
